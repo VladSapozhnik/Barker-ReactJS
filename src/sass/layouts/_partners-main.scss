@@ -1,0 +1,113 @@
+.partners-main {
+    padding: 205px 0 195px;
+    background-color: #F3F3F3;
+    position: relative;
+    @include point(def-down){
+        padding: 235px 0 50px;
+    }
+    .partners-lock {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-120%, -50%);
+        @include point(def-down){
+            top: 18%;
+            transform: translate(-92%, -50%);
+            width: 176px;
+        }
+    }
+    .become-partner {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-121%,-50%);
+        width: 226px;
+        height: 226px;
+        border-radius: 50%;
+        box-shadow: 0 28.25px 56.5px rgba(0, 169, 78, 0.25);
+        background-position: center;
+        background-size: 100%;
+        display: block;
+        &.ru {
+            background-image: url("/images/partners-decor-ru.svg");
+        }
+        &.uk {
+            background-image: url("/images/partners-decor-uk.svg");
+        }
+        @include point(def-down){
+            top: 18%;
+            transform: translate(-50%, -50%);
+            width: 52px;
+            height: 52px;
+        }
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-75%,-50%);
+        width: 666px;
+        height: 666px;
+        border-radius: 50%;
+        background: #fff;
+        @include point(def-down) {
+            left: 50%;
+            top: 26%;
+            transform: translate(-50%, -50%);
+            width: 305px;
+            height: 305px;
+        }
+    }
+    &__content {
+        width: 50%;
+        position: relative;
+        z-index: 1;
+        margin-left: auto;
+        @include point(def-down){
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+    &__subtitle {
+        font-size: 24px;
+        line-height: 150%;
+        font-weight: 500;
+        color: #7E8085;
+        padding-left: 76px;
+        position: relative;
+        margin-bottom: 24px;
+        @include point(def-down){
+            padding-left: 50px;
+            font-size: 20px;
+            line-height: 130%;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 16px;
+            background: #7E8085;
+            width: 40px;
+            height: 2px;
+        }
+    }
+    &__description {
+        color: #7E8085;
+        margin-bottom: 42px;
+        margin-left: 76px;
+        line-height: 150%;
+        @include point(def-down){
+            margin-left: 50px;
+        }
+    }
+    .button-circle {
+        margin-left: 76px;
+        @include point(def-down){
+            margin-left: 50px;
+        }
+    }
+    .section-title {
+        margin-bottom: 42px;
+    }
+}

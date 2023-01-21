@@ -1,0 +1,48 @@
+.contacts {
+  background-color: #000;
+  background-image: url("../../images/contacts-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  padding: 80px 0;
+  .container {
+    max-width: 1234 + 54px;
+  }
+  &_title {
+    @include title-h2(30px, center, #fff);
+  }
+  &_text {
+    @include p-style(10px);
+    span {
+      color: $yellow;
+    }
+  }
+
+  &-form {
+    margin-top: 61px;
+    @include point(xs-lg) {
+      margin-top: 30px;
+      flex-direction: column;
+      align-items: center;
+    }
+    &_field {
+      @include input-style();
+      max-width: 444px;
+      @include point(md-lg) {
+        max-width: 50%;
+      }
+      @include point(xs-lg) {
+        margin-bottom: 20px;
+      }
+      @include point(xs-md) {
+        max-width: 80%;
+      }
+    }
+    &_btn {
+      @include btn-style(15px 99px);
+      @include point(xs-md) {
+        padding: 10px 25px;
+      }
+    }
+  }
+}

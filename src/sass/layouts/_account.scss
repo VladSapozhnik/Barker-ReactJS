@@ -1,0 +1,545 @@
+.account {
+    @include point(def-down) {
+        flex-direction: column;
+    }
+
+    &__legal-entity-action {
+        width: 25px;
+        height: 25px;
+        z-index: 3;
+        &.delete {
+            top: 17px;
+            right: 17px;
+            background-position: center;
+            @include icons(trash, (), true);
+        }
+    }
+
+    &__heading {
+        padding: 220px 0 40px;
+        background-color: #fff;
+        @include point(def-down) {
+            padding: 90px 0 20px;
+        }
+
+        .h1, h1 {
+            margin-bottom: 0;
+            text-transform: uppercase;
+            @include point(def-down) {
+                font-size: 26px;
+            }
+        }
+    }
+
+    &__content {
+        padding-top: 105px;
+        padding-bottom: 100px;
+        @include point(def-down) {
+            padding-top: 15px;
+            padding-bottom: 80px;
+        }
+    }
+
+    &__content-title-wrap {
+        .button {
+            width: 230px;
+        }
+    }
+
+    &__content-title {
+        font-size: 28px;
+        @include point(def-down) {
+            display: none;
+        }
+    }
+
+    &__sidebar {
+        width: 335px;
+        @include point(def-down) {
+            width: 100%;
+        }
+
+        &-button {
+            display: none;
+            padding: 20px 30px;
+            @include icons('cat-arrow', (), true);
+            background-position: calc(100% - 15px) 50%;
+            background-color: #fff;
+            box-shadow: inset 3px 0 0 0 $green;
+            @include point(def-down) {
+                display: block;
+            }
+        }
+
+        .account__manager {
+            @include point(def-down) {
+                display: none;
+            }
+        }
+    }
+
+    &__main {
+        width: calc(100% - 335px);
+        padding-left: 85px;
+        @include point(mg-def) {
+            padding-left: 30px;
+        }
+        @include point(def-down) {
+            width: 100%;
+            padding-left: 0;
+        }
+    }
+
+    &__nav {
+        margin-bottom: 60px;
+        @include point(def-down) {
+            background-color: #fff;
+        }
+
+        &-title {
+            line-height: 30px;
+            background-color: #F9F9F9;
+            color: #2B2B2F;
+            @include point(def-down) {
+                margin: 12px 0 15px 30px;
+                background-color: #fff;
+                text-align: left;
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+        }
+
+        &-link {
+            padding: 30px;
+            background-color: #fff;
+            border-top: 1px solid #F9F9F9;
+            @include point(def-down) {
+                margin: 0 0 12px 30px;
+                padding: 0 0 0 9px;
+                border: none;
+                line-height: 19px;
+            }
+
+            &:hover,
+            &.active {
+                box-shadow: inset 3px 0 0 0 $green;
+                color: $gray;
+            }
+        }
+
+        &-buttons {
+            @include point(def-down) {
+                margin-top: 30px;
+            }
+
+            a.active {
+                background-color: #7E8085;
+            }
+        }
+    }
+
+    &__manager {
+        &-card {
+            padding: 20px;
+            border-radius: 6px;
+            background-color: #fff;
+        }
+
+        &-avatar {
+            width: 60px;
+            height: 60px;
+        }
+
+        &-mail {
+            margin-bottom: 3px;
+        }
+    }
+
+    &__data-form,
+    &__password-form,
+    &__address-form,
+    &__legal-form {
+        width: 100%;
+        max-width: 676px;
+        margin: 0 -5px 50px;
+
+        .validation__field {
+            margin: 0 5px 10px;
+        }
+
+        .button {
+            width: 280px;
+        }
+
+        ._wid-50 {
+            @include point(ms-down) {
+                width: 100%;
+            }
+        }
+    }
+
+    &__data-form {
+        padding-bottom: 50px;
+        border-bottom: 1px solid rgba(#000, .1);
+    }
+
+    &__form-cancel {
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &__orders {
+        &-heading {
+            .h-cell:not(.h-cell-1) {
+                padding-left: 20px;
+                @include point(lg-def) {
+                    padding-left: 10px;
+                }
+            }
+        }
+
+        .i-cell,
+        .h-cell {
+            flex-shrink: 0;
+        }
+
+        .h-cell-1 {
+            padding-left: 30px;
+        }
+
+        .h-cell-6 {
+            padding-right: 60px;
+            text-align: right;
+            @include point(lg-def) {
+                padding-right: 30px;
+            }
+        }
+
+        &.actual {
+            .account__order-info {
+                @include point(lg-def) {
+                    padding-bottom: 30px;
+                }
+            }
+
+            .account__orders-heading {
+                .h-cell-2 {
+                    @include point(lg-def) {
+                        display: none;
+                    }
+                }
+            }
+
+            .h-cell-4 {
+                @include point(lg-def) {
+                    display: none;
+                }
+            }
+
+            $h-cell-widths: 345px, 180px, 160px, 190px, 95px, 195px;
+            @for $i from 1 through length($h-cell-widths) {
+                .h-cell-#{$i} {
+                    width: nth($h-cell-widths, $i);
+                }
+            }
+
+            $h-cell-widths_HD: 320px, 160px, 120px, 120px, false, 160px;
+            @for $i from 1 through length($h-cell-widths_HD) {
+                @media(max-width: 1616px) and (min-width: 1441px) {
+                    @if (nth($h-cell-widths_HD, $i)) {
+                        .h-cell-#{$i} {
+                            width: nth($h-cell-widths_HD, $i);
+                        }
+                    }
+                }
+            }
+            $h-cell-widths_XL: 320px, 160px, 120px, 120px, 60px, 160px;
+            @for $i from 1 through length($h-cell-widths_XL) {
+                @media(max-width: 1440px) and (min-width: 1367px) {
+                    @if (nth($h-cell-widths_XL, $i)) {
+                        .h-cell-#{$i} {
+                            width: nth($h-cell-widths_XL, $i);
+                        }
+                    }
+                }
+            }
+            $h-cell-widths_LG: 225px, 160px, 120px, 120px, 60px, 160px;
+            @for $i from 1 through length($h-cell-widths_LG) {
+                @media(max-width: 1366px) and (min-width: 1281px) {
+                    @if (nth($h-cell-widths_LG, $i)) {
+                        .h-cell-#{$i} {
+                            width: nth($h-cell-widths_LG, $i);
+                        }
+                    }
+                }
+            }
+            $h-cell-widths_DEF: 280px, 0, 115px, false, 60px, 140px;
+            @for $i from 1 through length($h-cell-widths_DEF) {
+                @media(max-width: 1280px) and (min-width: 1025px) {
+                    @if (nth($h-cell-widths_DEF, $i)) {
+                        .h-cell-#{$i} {
+                            width: nth($h-cell-widths_DEF, $i);
+                        }
+                    }
+                }
+            }
+        }
+
+        &.draft {
+            .account__orders-heading {
+                .h-cell-5 {
+                    padding-right: 60px;
+                    text-align: right;
+                }
+            }
+
+            $h-cell-widths__DRAFT: 485px, 160px, 190px, 135px, 195px;
+            @for $i from 1 through length($h-cell-widths__DRAFT) {
+                .h-cell-#{$i} {
+                    width: nth($h-cell-widths__DRAFT, $i);
+                }
+            }
+
+            @media(max-width: 1616px) and (min-width: 1441px) {
+                .h-cell-1 {
+                    width: 360px;
+                }
+                .h-cell-4 {
+                    width: 85px;
+                }
+            }
+
+            @media(max-width: 1440px) and (min-width: 1367px) {
+                .h-cell-1 {
+                    width: 340px;
+                }
+                .h-cell-4 {
+                    width: 85px;
+                }
+            }
+
+            $h-cell-widths_LG__DRAFT: 325px, false, 120px, 80px, 160px;
+            @for $i from 1 through length($h-cell-widths_LG__DRAFT) {
+                @media(max-width: 1366px) and (min-width: 1281px) {
+                    @if (nth($h-cell-widths_LG__DRAFT, $i)) {
+                        .h-cell-#{$i} {
+                            width: nth($h-cell-widths_LG__DRAFT, $i);
+                        }
+                    }
+                }
+            }
+
+            $h-cell-widths_DEF__DRAFT: 295px, 120px, false, 60px, 120px;
+            @for $i from 1 through length($h-cell-widths_DEF__DRAFT) {
+                @media(max-width: 1280px) and (min-width: 1025px) {
+                    @if (nth($h-cell-widths_DEF__DRAFT, $i)) {
+                        .h-cell-#{$i} {
+                            width: nth($h-cell-widths_DEF__DRAFT, $i);
+                        }
+                    }
+                }
+            }
+
+            .h-cell-2 {
+                padding-left: 20px;
+            }
+
+            .h-cell-3 {
+                @media(max-width: 1280px) and (min-width: 1025px) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__order {
+
+        &-refresh,
+        &-delete {
+            width: 16px;
+            height: 16px;
+            margin-left: -15px;
+            background-position: 50%;
+        }
+
+        &-delete {
+            @include icons(trash, (), true);
+        }
+
+        &-refresh {
+            @include icons(refresh, (), true);
+        }
+
+        &-status {
+            line-height: 60px;
+            @include point(lg-def) {
+                z-index: 11;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                line-height: 30px;
+            }
+        }
+
+        &-price {
+            padding-right: 60px;
+            @include point(lg-def) {
+                padding-right: 30px;
+            }
+        }
+
+        &-toggler {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 100%;
+            @include icons('cat-arrow', (), true);
+            background-position: 50%;
+            border-left: 1px solid rgba(#000, .1);
+            @include point(lg-def) {
+                width: 25px;
+            }
+        }
+
+        &-title {
+            margin-bottom: 7px;
+        }
+
+        &-link {
+            margin-top: 3px;
+        }
+
+        .h-cell {
+            min-height: 60px;
+            background-color: #fff;
+        }
+
+        .h-cell-1 {
+            @include point(lg-def) {
+                border-right: 1px solid rgba(#000, .1);
+            }
+        }
+
+        .h-cell-3,
+        .h-cell-4,
+        .h-cell-5 {
+            padding-left: 20px;
+            @include point(lg-def) {
+                padding-left: 10px;
+            }
+        }
+
+        .with-border {
+            border-right: 1px solid rgba(#000, .1);
+        }
+    }
+
+    &__order-items {
+        padding: 20px;
+        background-color: #F9F9F9;
+        @media(max-width: 1616px) and (min-width: 1441px) {
+            width: 975px;
+        }
+        @media(max-width: 1440px) and (min-width: 1367px) {
+            width: 940px;
+        }
+        @media(max-width: 1366px) and (min-width: 1281px) {
+            width: 845px;
+        }
+
+        $i-cell-widths: 660px, 135px, 135px, 195px;
+        @for $i from 1 through length($i-cell-widths) {
+            .i-cell-#{$i} {
+                width: nth($i-cell-widths, $i);
+            }
+        }
+        $i-cell-widths_DEF: 280px, 70px, 100px, 105px;
+        @for $i from 1 through length($i-cell-widths_DEF) {
+            @media(max-width: 1280px) and (min-width: 1025px) {
+                .i-cell-#{$i} {
+                    width: nth($i-cell-widths_DEF, $i);
+                }
+            }
+        }
+
+        .i-cell-1 {
+            @media(max-width: 1616px) and (min-width: 1441px) {
+                width: 470px;
+            }
+            @media(max-width: 1440px) and (min-width: 1367px) {
+                width: 435px;
+            }
+            @media(max-width: 1366px) and (min-width: 1281px) {
+                width: 340px;
+            }
+        }
+    }
+
+    &__order-item {
+        margin-bottom: 20px;
+        background-color: #fff;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &-img {
+            flex-shrink: 0;
+            width: 100px;
+            height: 100px;
+            background-color: #E8E8E8;
+            @media(max-width: 1280px) and (min-width: 1025px) {
+                width: 85px;
+            }
+        }
+    }
+
+    &__order-status,
+    .order-mobile__status,
+    .order-detail__status {
+        white-space: nowrap;
+        border: 2px solid;
+        text-align: center;
+        background-color: #fff;
+
+        &.sent {
+            border-color: #006FD6;
+        }
+
+        &.canceled {
+            border-color: #CC0C00;
+        }
+
+        &.in_process {
+            border-color: #CD9400;
+        }
+
+        &.active {
+            border-color: $green;
+        }
+
+        &.in_deleting {
+            border-color: #BE6700;
+        }
+
+        &.archival {
+            border-color: #7E8085;
+        }
+    }
+
+    &__order-refresh,
+    .order-mobile__refresh {
+        @include icons(refresh, (), true);
+    }
+
+    &__order-delete,
+    .order-mobile__delete {
+        @include icons(trash, (), true);
+    }
+}

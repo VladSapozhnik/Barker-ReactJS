@@ -1,0 +1,158 @@
+.sorting-h-wrap {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    @include point(lg-down){
+        flex-wrap: wrap;
+    }
+    h1, .h1 {
+        margin-bottom: 0;
+        @include point(lg-down){
+            min-width: 100%;
+            max-width: 100%;
+            margin-bottom: 45px;
+        }
+    }
+    .dropdown {
+        display: none;
+        @include point(def-down){
+            display: block;
+            margin-right: 15px;
+        }
+        @include point(sm-down){
+            flex-grow: 1;
+        }
+    }
+    .v-select {
+        min-width: 386px;
+        max-width: 386px;
+        @include point(def-down){
+            min-width: 57px;
+            max-width: 57px;
+        }
+    }
+}
+.catalog-filter-wrap {
+    display: flex;
+    justify-content: space-between;
+    @include point(def-down){
+        flex-direction: column;
+    }
+    .column {
+        &.filter-wrap {
+            min-width: 345px;
+            max-width: 345px;
+            position: relative;
+            @include point(lg-def){
+                min-width: 300px;
+                max-width: 300px;
+            }
+            @include point(def-down){
+                min-width: 100%;
+                max-width: 100%;
+            }
+            > .filter-wrapper {
+                @include point(def-down){
+                    display: none;
+                }
+            }
+        }
+        &.catalog-wrap {
+            min-width: calc(100% - 400px);
+            max-width: calc(100% - 400px);
+            @include point(lg-def){
+                min-width: calc(100% - 330px);
+                max-width: calc(100% - 330px);
+            }
+            @include point(def-down){
+                min-width: 100%;
+                max-width: 100%;
+            }
+        }
+    }
+}
+.catalog-wrap {
+    &__view-small {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -7px;
+        .catalog-item {
+            margin: 0 7px 14px;
+            min-width: calc(33.333% - 14px);
+            max-width: calc(33.333% - 14px);
+            @include point(xl-def){
+                min-width: calc(50% - 14px);
+                max-width: calc(50% - 14px);
+            }
+            @include point(md-sm){
+                min-width: calc(50% - 14px);
+                max-width: calc(50% - 14px);
+            }
+            @include point(sm-down){
+                min-width: calc(100% - 14px);
+                max-width: calc(100% - 14px);
+            }
+        }
+    }
+    &__view-big {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -7px;
+    }
+}
+.download-catalog-wrap {
+    border-top: 1px solid rgba(#000000, 0.15);
+    padding: 160px  0 100px;
+    @include point(def-down){
+        padding: 80px 0;
+    }
+    .title {
+        font-size: 48px;
+        line-height: 54px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #2B2B2F;
+        width: 981px;
+        max-width: 100%;
+        margin: 0 auto 30px;
+        @include point(def-down){
+            font-size: 22px;
+            line-height: 30px;
+        }
+    }
+    .subtitle {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 18px;
+        text-align: center;
+        color: #7E8085;
+        margin: 0 auto 66px;
+        width: 357px;
+        max-width: 100%;
+    }
+    .download {
+        display: block;
+        width: 154px;
+        height: 154px;
+        border-radius: 50%;
+        margin: 0 auto;
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        box-shadow: 0px 28.25px 56.5px rgba(0, 169, 78, 0.25);
+        &.ru {
+            background-image: url("/img/download-ru.svg");
+        }
+        &.uk {
+            background-image: url("/img/download-uk.svg");
+        }
+        &.en {
+            background-image: url("/img/download-en.svg");
+        }
+        @include point(def-down){
+            width: 80px;
+            height: 80px;
+        }
+    }
+}

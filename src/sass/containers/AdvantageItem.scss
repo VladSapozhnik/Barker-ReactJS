@@ -1,0 +1,39 @@
+.advantage-item {
+  max-width: 444px;
+  @include point(def-hd) {
+    width: 366px;
+  }
+
+  @include point(xs-lg) {
+    margin-bottom: 15px;
+  }
+  @include point(xs-def) {
+    max-width: 550px;
+  }
+  & + & {
+    margin-left: 30px;
+    @include point(def-lg) {
+      margin-left: 10px;
+    }
+
+    @include point(xs-def) {
+      margin-left: 0px;
+    }
+  }
+  &_pic {
+    margin-bottom: 20px;
+  }
+  &_title {
+    font-size: 34px;
+    line-height: 125%;
+    margin-bottom: 10px;
+    text-align: center;
+    @include point(lg-hd) {
+      font-size: 28px;
+    }
+  }
+  &_description {
+   @include p-style();
+
+  }
+}

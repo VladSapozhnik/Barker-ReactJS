@@ -1,0 +1,246 @@
+.teams-wrap {
+    display: flex;
+    justify-content: space-between;
+    @include point(def-down){
+        flex-direction: column;
+    }
+    &.type-1 {
+        .container-half {
+            margin-left: auto;
+            @include point(lg-def){
+                margin-right: auto;
+            }
+        }
+        .half-box {
+            padding-bottom: 200px;
+            @include point(def-down){
+                padding-bottom: 80px;
+            }
+        }
+    }
+    &.type-2 {
+        .container-half {
+            margin-right: auto;
+            @include point(lg-down){
+                margin-left: auto;
+            }
+        }
+        .half-box {
+            padding-top: 140px;
+            padding-left: 100px;
+            padding-bottom: 140px;
+            @include point(lg-down){
+                padding-left: 0;
+            }
+            @include point(def-down){
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+        }
+    }
+    &__title {
+        font-size: 28px;
+        line-height: 36px;
+        text-transform: uppercase;
+        color: #2B2B2F;
+        padding-right: 86px;
+        padding-left: 86px;
+        margin-bottom: 40px;
+        @include point(md-down){
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+    }
+    &__description {
+        font-size: 16px;
+        line-height: 150%;
+        color: #7E8085;
+        margin-bottom: 40px;
+        padding-right: 86px;
+        padding-left: 86px;
+        @include point(md-down){
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+        p {
+            font-size: 16px;
+        }
+    }
+    &__text {
+        line-height: 1.5;
+        padding-right: 86px;
+        padding-left: 86px;
+        @include point(md-down){
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+    }
+    .team-item-img {
+        width: 50%;
+        position: relative;
+        @include point(lg-def){
+            width: 40%;
+        }
+        @include point(def-down){
+            width: 100%;
+            height: 275px;
+        }
+    }
+    .half-box {
+        width: 50%;
+        @include point(lg-def){
+            width: 60%;
+        }
+        @include point(def-down){
+            width: 100%;
+        }
+    }
+    .container-half {
+        padding: 0 15px;
+        max-width: 808px;
+        @include point(lg-down){
+            max-width: 100%;
+        }
+        @include point(xl-lg) {
+            width: 620px;
+        }
+        @include point(lg-def) {
+            width: 495px;
+        }
+        @include point(def-down){
+            width: 100%;
+        }
+    }
+}
+.mission {
+    background-color: #F3F3F3;
+    padding: 204px 0;
+    background-image: url("/images/mission-logo.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 44%;
+    text-align: center;
+    @include point(lg-down){
+        background-size: 70%;
+    }
+    @include point(def-down){
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    &__title {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 18px;
+        color: #2B2B2F;
+        margin-bottom: 30px;
+    }
+    &__text {
+        font-size: 28px;
+        line-height: 36px;
+        text-transform: uppercase;
+        color: #2B2B2F;
+        padding: 0 20%;
+        @include point(lg-def){
+            padding: 0 10%;
+        }
+        @include point(def-down){
+            padding: 0;
+        }
+        @include point(ms-down){
+            font-size: 22px;
+            line-height: 28px;
+        }
+        span {
+            text-decoration: underline;
+        }
+    }
+}
+.team-photo {
+    padding: 120px 0;
+    @include point(def-down){
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+}
+.team-photo-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -4.5px;
+}
+.team-photo-item {
+    margin: 0 4.5px 9px;
+    min-width: calc(25% - 9px);
+    max-width: calc(25% - 9px);
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    @include point(lg-md){
+        min-width: calc(33.333% - 9px);
+        max-width: calc(33.333% - 9px);
+    }
+    @include point(md-ms){
+        min-width: calc(50% - 9px);
+        max-width: calc(50% - 9px);
+    }
+    @include point(ms-down){
+        min-width: calc(100% - 9px);
+        max-width: calc(100% - 9px);
+    }
+    &:hover {
+        &:after {
+            opacity: 0.5;
+        }
+        .team-photo-item__text {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #000000;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    img {
+        width: 100%;
+    }
+    &__text {
+        background: #fff;
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        width: calc(100% - 20px);
+        padding: 20px 0 33px;
+        z-index: 2;
+        transform: translateY(calc(100% + 15px));
+        opacity: 0;
+        transition: all .3s;
+    }
+    .name {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 18px;
+        color: #2B2B2F;
+        padding: 0 20px;
+        margin-bottom: 4px;
+    }
+    .position {
+        font-size: 14px;
+        line-height: 130%;
+        color: #2B2B2F;
+        padding: 0 20px 18px;
+        border-bottom: 1px solid rgba(#000000, 0.05);
+        margin-bottom: 15px;
+    }
+    .description {
+        font-size: 14px;
+        line-height: 130%;
+        color: #7E8085;
+        padding: 0 20px;
+    }
+}

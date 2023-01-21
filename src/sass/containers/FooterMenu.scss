@@ -1,0 +1,28 @@
+.footer-menu {
+  margin-right: 259px;
+  @include point(xs-hd) {
+    margin-right: 20px;
+  }
+  @include point(xs-ms) {
+    margin-bottom: 20px;
+  }
+  &_item {
+    padding-left: 20px;
+    @include point(xs-hd) {
+      font-size: 18px;
+    }
+    & + & {
+      margin-top: 30px;
+    }
+    &::before {
+      content: '';
+      width: 12px;
+      height: 2px;
+      background-color: #fff;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 1px;
+    }
+  }
+}

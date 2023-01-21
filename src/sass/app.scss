@@ -1,0 +1,60 @@
+//@import '~svg-spritemap-webpack-plugin/sprites.scss';
+@import "normalize";
+@import "fonts";
+@import "config";
+//@import "mixins/clearfix";
+@import "mixins/breakpoints";
+@import "mixins/background";
+@import "mixins/list-reset";
+@import "mixins/item-img";
+@import "mixins/btn-style";
+@import "mixins/input-style";
+@import "mixins/title-h2";
+@import "mixins/p-style";
+@import "grid";
+@import "base";
+@import "helpers";
+
+//components
+@import "components/Header";
+@import "components/Main";
+@import "components/About";
+@import "components/Assortment";
+@import "components/Company";
+@import "components/Advantage";
+@import "components/Contacts";
+@import "components/Footer";
+
+//container
+@import "containers/Info";
+@import "containers/AssortmentProduct";
+@import "containers/AdvantageItem";
+@import "containers/Popup";
+@import "containers/MenuMobile";
+@import "containers/Maps";
+@import "containers/FooterList";
+@import "containers/FooterMenu";
+
+
+//@include point(ms-down) {
+//    padding: 50px;
+//    background-color: $green;
+//    &::before, &::after {
+//        content: "";
+//        z-index: 1;
+//        position: absolute;
+//        top: calc(50% - 30px);
+//        width: 60px;
+//        height: 60px;
+//        border-radius: 50%;
+//        background: -moz-linear-gradient(top, #f3f3f3 51%, #fff 51%);
+//        background: -webkit-linear-gradient(top, #f3f3f3 51%, #fff 51%);
+//        background: linear-gradient(to bottom, #f3f3f3 51%, #fff 51%);
+//    }
+//    &::before {
+//        left: -15px;
+//    }
+//    &::after {
+//        right: -15px;
+//    }
+//}

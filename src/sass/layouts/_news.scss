@@ -1,0 +1,110 @@
+.news-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px 100px;
+    .news-item {
+        min-width: calc(33.333% - 30px);
+        max-width: calc(33.333% - 30px);
+        margin: 0 15px 15px;
+        @include point(lg-ms){
+            min-width: calc(50% - 30px);
+            max-width: calc(50% - 30px);
+        }
+        @include point(ms-down){
+            min-width: calc(100% - 30px);
+            max-width: calc(100% - 30px);
+        }
+    }
+}
+.news-detail {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+    @include point(def-down){
+        flex-direction: column;
+        position: static;
+    }
+    p, a, ul li, ol li {
+        font-size: 18px;
+    }
+    .column {
+        min-width: calc(50% - 30px);
+        max-width: calc(50% - 30px);
+        &:nth-child(1){
+            position: sticky;
+            left: 0;
+            top: 80px;
+            @include point(def-down){
+                position: static;
+                left: unset;
+                top: unset;
+            }
+        }
+        @include point(def-down){
+            min-width: 100%;
+            max-width: 100%;
+        }
+        h1, .h1 {
+            text-transform: uppercase;
+            text-align: left;
+        }
+    }
+    .swiper-pagination {
+        position: static;
+        text-align: center;
+        transition: 300ms opacity;
+    }
+    .swiper-container {
+        margin-bottom: 55px;
+        img {
+            width: 100%;
+        }
+    }
+    .slider-detail {
+        &__button {
+            width: 24px;
+            height: 24px;
+            margin: 0 30px;
+
+            &--prev {
+                @include icons('slider-left', (), true);
+            }
+
+            &--next {
+                @include icons('slider-right', (), true);
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+        .swiper-pagination {
+            position: static;
+
+        }
+
+
+
+    }
+    .swiper-pagination-bullet {
+        opacity: .2;
+        width: 8px;
+        height: 8px;
+        margin: 0 8px;
+        background-color: $dark;
+        transition: opacity .2s, box-shadow .2s;
+
+        &-active {
+            opacity: 1;
+            margin: 0 16px;
+            box-shadow: 0 0 0 8px $dark;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+

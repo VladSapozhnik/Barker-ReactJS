@@ -1,0 +1,51 @@
+.main {
+  width: 100%;
+  @include background('header-bg');
+  color: #fff;
+  @include point(xs-hd) {
+    margin-bottom: 75px;
+  }
+  .btn {
+    @include btn-style(15px 84.5px);
+    @include point(xs-md) {
+      padding: 10px 25px;
+    }
+  }
+
+  &_description {
+    max-width: 694px;
+    @include p-style(30px);
+  }
+}
+
+.h1 {
+  color: #FFD324;
+  font-weight: 700;
+  font-size: 130px;
+  line-height: 110%;
+  font-family: $font-family2;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3), 0px 0px 29px rgba(255, 249, 94, 0.54);
+  @include point(xs-hd) {
+    font-size: 90px;
+  }
+  @include point(md-ms) {
+    font-size: 78px;
+  }
+  @include point(xs-md) {
+    font-size: 60px;
+  }
+  span {
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 125%;
+    @include point(ms-hd) {
+      font-size: 60px;
+    }
+    @include point(xs-ms) {
+      font-size: 48px;
+    }
+    @include point(xs-md) {
+      font-size: 30px;
+    }
+  }
+}

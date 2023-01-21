@@ -1,0 +1,213 @@
+.wrap-404 {
+    padding-top: 135px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5px;
+    @include point(def-down){
+        background-position: center 86px;
+        background-size: 300px;
+        padding-top: 275px;
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: 572px;
+        height: 572px;
+        border-radius: 50%;
+        background: #F9F9F9;
+        transform: translateX(-50%);
+        z-index: -1;
+        @include point(def-down){
+            width: 343px;
+            height: 343px;
+            top: 30px;
+        }
+    }
+    &__title {
+        font-size: 36px;
+        line-height: 42px;
+        transform: translateX(calc(50% - 290px));
+        text-transform: uppercase;
+        color: #2B2B2F;
+        margin-bottom: 264px;
+        @include point(def-down){
+            display: none;
+        }
+    }
+    &__info {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 120%;
+        color: #2B2B2F;
+        margin-bottom: 44px;
+        transform: translateX(calc(50% + 112px));
+        @include point(def-down){
+            transform: translateX(0);
+            text-align: center;
+            margin-top: 50px;
+        }
+    }
+}
+.wrap-404-decor {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 572px;
+    height: 572px;
+    @include point(def-down){
+        transform: translate(-50%,-57%) scale(0.6);
+    }
+    .item-4 {
+        height: 120px;
+        width: 251px;
+        position: absolute;
+        top: 228px;
+        &:first-child {
+            right: 50%;
+            animation: circleMove1 1s forwards cubic-bezier(.6,.68,.64,.88);
+            animation-delay: 1s;
+            transform-origin: right center;
+            &:before {
+                left: 0;
+                animation: rotate1 1s forwards cubic-bezier(.6,.68,.64,.88);
+                animation-delay: 1s;
+            }
+        }
+        &:last-child {
+            left: 50%;
+            animation: circleMove2 1s forwards cubic-bezier(.6,.68,.64,.88);
+            animation-delay: 1s;
+            transform-origin: left center;
+            &:before {
+                right: 0;
+                animation: rotate2 1s forwards cubic-bezier(.6,.68,.64,.88);
+                animation-delay: 1s;
+            }
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 120px;
+            height: 120px;
+            background-repeat: no-repeat;
+            background-image: url("/images/404-4.svg");
+            background-size: 120px;
+        }
+    }
+    .item-o {
+        width: 114px;
+        height: 120px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-image: url("/images/404-o.svg");
+        position: absolute;
+        left: 50%;
+        top: 226px;
+        transform: translateX(-50%);
+        animation: center 1s forwards cubic-bezier(.6,.68,.64,.88);
+        animation-delay: 1s;
+    }
+    .item-h {
+        width: 227px;
+        height: 260px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-image: url("/images/404-house.svg");
+        position: absolute;
+        left: 50%;
+        top: 135px;
+        transform: translateX(-50%);
+        animation: house 1s forwards cubic-bezier(.6,.68,.64,.88);
+        animation-delay: 1s;
+    }
+    .item-message {
+        width: 227px;
+        height: 75px;
+        position: absolute;
+        left: 60%;
+        top: 236px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-image: url("/images/404-message.svg");
+        transform: scale(0);
+        animation: message 0.5s forwards ease;
+        animation-delay: 2s;
+        transform-origin: left bottom;
+        z-index: 1;
+    }
+}
+@keyframes house {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(-50%) scale(0.8) translateY(5%);
+    }
+}
+@keyframes center {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(-35%) scale(0.6) translateY(36px);
+    }
+}
+@keyframes message {
+    0% {
+        transform: scale(0);
+    }
+    60% {
+        transform: scale(1.02) translateX(4%);
+    }
+    84% {
+        transform: scale(0.98) translateX(3%);
+    }
+    100% {
+        transform: scale(1) translateX(4%);
+    }
+}
+@keyframes circleMove1 {
+   0% {
+       transform: rotate(0);
+       width: 251px;
+   }
+    100% {
+        transform: rotate(114deg);
+        width: 240px;
+    }
+}
+@keyframes circleMove2 {
+    0% {
+        transform: rotate(0);
+        width: 251px;
+    }
+    100% {
+        transform: rotate(243deg);
+        width: 240px;
+    }
+}
+@keyframes rotate2 {
+    0% {
+        transform: none;
+    }
+    100%{
+        transform: rotate(-12deg) scale(0.65) translateX(-24%);
+    }
+}
+@keyframes rotate1 {
+    0% {
+        transform: none;
+    }
+    100% {
+        transform: rotate(16deg) scale(0.65) translateX(19%);
+    }
+}

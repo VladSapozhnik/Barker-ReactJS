@@ -1,0 +1,31 @@
+.assortment-product {
+  //width: 16.6666%;
+  //width: 286px;
+  border-radius: 10px;
+  position: relative;
+  box-sizing: border-box;
+  //margin: 0 15px;
+  //& + & {
+  //  margin-left: 30px;
+  //}
+  &_pic {
+    margin-bottom: 10px;
+  }
+  &_price {
+    margin-bottom: 10px;
+  }
+  &_btn {
+    opacity: 0;
+    transition: opacity .3s;
+    @include btn-style(15px 101px);
+    @include point(xs-md) {
+      padding: 10px 35px;
+    }
+  }
+  &:hover {
+    padding-bottom: 0;
+    .assortment-product_btn {
+      opacity: 1;
+    }
+  }
+}

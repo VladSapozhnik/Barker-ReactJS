@@ -1,0 +1,275 @@
+.banner {
+    overflow: hidden;
+    min-height: 100vh;
+    padding: 145px 0;
+    background-color: #F3F3F3;
+    @include point(def-down) {
+        max-width: none;
+        padding: 80px 0 45px;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 10%;
+        left: 55%;
+        width: 1690px;
+        height: 1690px;
+        border-radius: 50%;
+        background-color: #fff;
+        @include point(def-ms) {
+            width: 600px;
+            height: 600px;
+        }
+    }
+
+    &__slide {
+        width: 100%;
+        padding-right: 20%;
+        @include point(lg-def) {
+            padding-right: 10%;
+        }
+        @include point(def-down) {
+            flex-direction: column;
+            padding-right: 0;
+        }
+
+        &-title {
+            max-width: 510px;
+            font-size: 64px;
+            @include point(xl-lg) {
+                font-size: 44px;
+            }
+            @include point(lg-def) {
+                max-width: 440px;
+                font-size: 38px;
+            }
+            @include point(def-down) {
+                max-width: none;
+            }
+            @include point(md-down) {
+                font-size: 35px;
+            }
+        }
+
+        &-text-sector {
+            @include point(def-down) {
+                width: 100%;
+            }
+        }
+
+        &-text {
+            width: 360px;
+            padding-left: 35px;
+            font-size: 16px;
+            line-height: 24px;
+            @include point(lg-def) {
+                width: 290px;
+            }
+            @include point(def-down) {
+                width: 100%;
+            }
+            @include point(sm-down) {
+                padding-left: 20px;
+                font-size: 14px;
+                line-height: 21px;
+            }
+        }
+
+        &-img {
+            width: 500px;
+            height: 580px;
+            @include point(xl-lg) {
+                width: 300px;
+                height: 370px;
+            }
+            @include point(lg-sm) {
+                width: 270px;
+                height: 333px;
+            }
+            @include point(def-down) {
+                order: -1;
+            }
+            @include point(sm-down) {
+                width: 165px;
+                height: 200px;
+            }
+
+            & > img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+
+        &-file {
+            top: 36%;
+            right: -17%;
+            width: 154px;
+            height: 154px;
+            box-shadow: 0 28px 56px rgba(0, 169, 78, 0.25);
+            transition: box-shadow .2s;
+            &.uk {
+                background: url("/img/download-uk.svg") no-repeat 0 0 / 100%;
+            }
+            &.ru {
+                background: url("/img/download-ru.svg") no-repeat 0 0 / 100%;
+            }
+            &.en {
+                background: url("/img/download-en.svg") no-repeat 0 0 / 100%;
+            }
+            @include point(xl-def) {
+                width: 100px;
+                height: 100px;
+            }
+            @include point(md-down) {
+                width: 51px;
+                height: 51px;
+            }
+
+            &:hover {
+                box-shadow: none;
+            }
+        }
+    }
+
+    &__bottom-line {
+        bottom: 3%;
+        padding: 0 50px;
+        @include point(sm-down) {
+            bottom: 40px;
+            padding: 0 15px;
+        }
+    }
+
+    &__scroll {
+        padding-left: 30px;
+        line-height: 24px;
+        @include icons('down-arrow', (), true);
+        @include point(md-down) {
+            display: none;
+        }
+    }
+
+    &__button {
+        width: 24px;
+        height: 24px;
+        margin: 0 30px;
+
+        &--prev {
+            @include icons('slider-left', (), true);
+        }
+
+        &--next {
+            @include icons('slider-right', (), true);
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__social-link {
+        display: block;
+        width: 24px;
+        height: 24px;
+        background-position: 50%;
+        @include point(md-down) {
+            display: none;
+        }
+
+        &.inst {
+            @include icons('inst', (
+                color: '#{$dark}'
+            ));
+
+            &:hover {
+                @include icons('inst', (
+                    color: '#{$green}'
+                ));
+            }
+        }
+
+        &.fb {
+            @include icons('fb', (
+                color: '#{$dark}'
+            ));
+
+            &:hover {
+                @include icons('fb', (
+                    color: '#{$green}'
+                ));
+            }
+        }
+    }
+
+    &__slider-nav {
+        @include point(sm-down) {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    .button-circle {
+        @include point(sm-down) {
+            height: 40px;
+            padding-left: 25px;
+            background-size: 32px;
+            font-size: 10px;
+        }
+    }
+
+    .swiper-pagination {
+        position: static;
+    }
+
+    .swiper-container {
+        overflow: visible;
+        width: 100%;
+        height: 100%;
+        @include point(def-down) {
+            overflow: hidden;
+        }
+    }
+
+    .swiper-slide {
+        opacity: .4;
+        display: flex;
+        width: calc(100% - 100px);
+        transition: opacity .3s;
+        @include point(def-down) {
+            width: 100%;
+        }
+
+        &-active {
+            opacity: 1;
+        }
+
+        &-prev {
+            opacity: 0;
+        }
+    }
+
+    .swiper-pagination-bullet {
+        opacity: .2;
+        width: 8px;
+        height: 8px;
+        margin: 0 8px;
+        background-color: $dark;
+        transition: opacity .2s, box-shadow .2s;
+
+        &-active {
+            opacity: 1;
+            margin: 0 16px;
+            box-shadow: 0 0 0 8px $dark;
+        }
+
+        &:nth-last-child(1),
+        &:nth-last-child(2) {
+            display: none;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}

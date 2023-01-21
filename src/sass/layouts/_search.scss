@@ -1,0 +1,123 @@
+.search {
+    &-wrap {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    &__dropdown {
+        z-index: 100;
+        height: 100vh;
+        background-color: rgba(#000, .3);
+    }
+
+    &__form {
+        top: 110px;
+        padding-top: 40px;
+        padding-bottom: 50px;
+        background-color: #fff;
+        transition: transform .2s, padding .1s;
+
+        @at-root .fixed {
+            .search__form {
+                transform: translateY(-45px);
+                padding-bottom: 15px;
+            }
+        }
+
+        @include point(def-down) {
+            top: 60px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            @at-root .fixed {
+                .search__form {
+                    transform: translateY(-20px);
+                }
+            }
+        }
+
+        &-close {
+            height: 100%;
+            width: 55px;
+            @include icons(remove, (), true);
+            background-position: 50%;
+        }
+
+        .validation__field {
+            margin: 0 165px;
+            @include point(def-down) {
+                margin: 0 15px;
+            }
+        }
+
+        .validation__input {
+            background-color: #F8F8F8;
+        }
+    }
+
+    &__heading {
+        @include point(ms-down) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    &__results {
+        margin: 0 -7px 50px;
+        padding-bottom: 45px;
+        border-bottom: 1px solid rgba(#000, .15);
+
+        .catalog-item {
+            width: calc(25% - 14px);
+            margin: 0 7px 14px;
+            @include point(lg-md) {
+                width: calc(33.333% - 14px);
+            }
+            @include point(md-sm) {
+                width: calc(50% - 14px);
+            }
+            @include point(sm-down) {
+                width: calc(100% - 14px);
+            }
+        }
+    }
+
+    &__no-results {
+        width: 400px;
+        max-width: 100%;
+        min-height: 250px;
+        margin: 0 auto;
+    }
+
+    &__catalog-download {
+        padding: 160px 0;
+        border-top: 1px solid rgba(#000, .15);
+        @include point(def-down) {
+            padding: 50px 0;
+        }
+
+        &-title {
+            font-size: 48px;
+            line-height: 1.15;
+            @include point(def-down) {
+                font-size: 22px;
+            }
+        }
+    }
+
+    &__catalog-download-text {
+        width: 1000px;
+        max-width: 100%;
+    }
+
+    &__catalog-download-link {
+        margin-top: 60px;
+        box-shadow: 0 28.25px 56.5px rgba(0, 169, 78, 0.25);
+        transition: box-shadow .2s;
+
+        &:hover {
+            box-shadow: none;
+        }
+    }
+}

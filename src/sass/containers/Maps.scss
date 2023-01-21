@@ -1,0 +1,8 @@
+.maps {
+  width: 48%;
+  height: 566px;
+  @include point(xs-lg) {
+    width: 100%;
+    height: 400px;
+  }
+}

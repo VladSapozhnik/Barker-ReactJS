@@ -1,0 +1,39 @@
+.assortment {
+  margin-bottom: 85px;
+  &_title {
+    @include title-h2(40px, center)
+  }
+
+  .swiper-slide {
+    &:first-child {
+      margin-left: auto;
+    }
+
+    &:last-child {
+      margin-right: auto !important;
+    }
+  }
+
+  .swiper-pagination-horizontal {
+    bottom: 0px !important;
+  }
+
+  &-select {
+    max-width: 1550px;
+    margin-bottom: 40px;
+    &_item {
+      @include btn-style(15px 0, select);
+      transition: background-color .3s;
+      @include point(md-hd) {
+        padding: 15px 30px;
+      }
+      @include point(xs-md) {
+        padding: 5px 15px;
+      }
+      &:hover,
+      &.active {
+        background-color: #FFD324;
+      }
+    }
+  }
+}

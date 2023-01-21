@@ -1,0 +1,80 @@
+.info {
+  max-width: 790px;
+  padding: 60px 30px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 40px rgba(142, 162, 170, 0.2);
+  border-radius: 15px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  @include point(xs-hd) {
+    padding: 30px 20px;
+  }
+
+  @include point(lg-hd) {
+    max-width: 650px;
+  }
+
+  @include point(def-lg) {
+    max-width: 578px;
+  }
+
+  @include point(xs-def) {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 54px);
+  }
+
+  &_title {
+    @include title-h2(30px);
+    @include point(lg-hd) {
+      @include title-h2(15px);
+    }
+  }
+
+  &_description {
+    @include p-style(10px, true);
+    @include point(lg-hd) {
+      font-size: 18px;
+    }
+  }
+}
+
+.essential {
+  margin-top: 20px;
+  @include point(lg-hd) {
+    font-size: 16px;
+  }
+
+  &_title {
+    font-size: 34px;
+    line-height: 125%;
+    margin-bottom: 10px;
+    @include point(lg-hd) {
+      font-size: 28px;
+    }
+  }
+
+  &-list {
+    font-weight: 400;
+    line-height: 130%;
+    margin-bottom: 30px;
+
+    &_item {
+      & + & {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  &_btn {
+    @include btn-style(15px 143px);
+    @include point(md-hd) {
+      padding: 15px 75px;
+    }
+    @include point(xs-md) {
+      padding: 10px 25px;
+    }
+  }
+}

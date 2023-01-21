@@ -1,0 +1,9 @@
+.advantage {
+  margin-bottom: 150px;
+  @include point(xs-hd) {
+    margin-bottom: 75px;
+  }
+  &_title {
+    @include title-h2(40px, center)
+  }
+}

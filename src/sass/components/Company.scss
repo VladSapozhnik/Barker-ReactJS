@@ -1,0 +1,34 @@
+.company {
+  margin-bottom: 150px;
+  @include point(xs-hd) {
+    margin-bottom: 75px;
+  }
+  &-box {
+    max-width: 1234px;
+    height: auto;
+    border-radius: 15px;
+    @include point(lg-hd) {
+      width: 70%;
+    }
+    @include point(xs-def) {
+      display: none;
+    }
+    &_pic {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-info {
+    &.info {
+      right: 27px;
+      @include point(xs-def) {
+        width: 100%;
+        max-width: 100%;
+        position: static;
+        transform: translate(0, 0);
+      }
+    }
+  }
+}

@@ -1,0 +1,128 @@
+.nav {
+  @include point(xs-lg) {
+    display: none;
+  }
+  &-list {
+    @include list-reset;
+
+    &_item {
+      position: relative;
+      padding-bottom: 2px;
+      overflow: hidden;
+      @include point(lg-hd) {
+        font-size: 0.8em;
+      }
+      & + & {
+        margin-left: 50px;
+        @include point(hd-dt) {
+          margin-left: 30px;
+        }
+        @include point(lg-hd) {
+          margin-left: 15px;
+        }
+      }
+      &::before {
+        content: '';
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        bottom: 0;
+        left: 0;
+        transition: transform .3s;
+        position: absolute;
+        transform: translateX(-100%);
+      }
+      &:hover {
+          &::before {
+            transform: translateX(0);
+          }
+      }
+    }
+  }
+}
+
+.header {
+  z-index: 9999;
+
+  &_tel {
+    @include point(lg-hd) {
+      font-size: 0.9em;
+    }
+    @include point(xs-lg) {
+      display: none;
+    }
+  }
+
+  &_pic {
+    width: 230px;
+    @include point(xs-ms) {
+      width: 130px;
+    }
+  }
+
+  &.active {
+    background-color: rgba(0, 0, 0, .8);
+    transition: background-color .3s;
+  }
+
+  &_btn {
+    @include btn-style(15px 75.5px, true);
+    @include point(lg-hd) {
+      padding: 15px 30px;
+      //@include btn-style(15px 30.5px, true);
+    }
+    @include point(xs-lg) {
+      display: none;
+    }
+  }
+}
+
+.openMenu {
+  width: 45px;
+  height: 30px;
+  cursor: pointer;
+  position: relative;
+  z-index: 999999;
+  display: none;
+  @include point(xs-lg) {
+    display: block;
+  }
+  &.active {
+    &::before {
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+    }
+    &::after {
+      opacity: 0;
+    }
+    span {
+      left: 0;
+      transform: translateY(-50%) rotate(-45deg);
+    }
+  }
+  &::before,
+  &::after,
+  span {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: $yellow;
+    position: absolute;
+    transition: all .3s;
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+  }
+  &::after {
+    bottom: 0;
+    left: 0;
+  }
+  span {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}

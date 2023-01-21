@@ -1,0 +1,48 @@
+.footer {
+  background-color: #000;
+  color: #fff;
+  @include point(xs-lg) {
+    flex-direction: column;
+  }
+
+  &-wrapper {
+    @include point(xs-lg) {
+      padding: 20px 0;
+    }
+    @include point(ms-hd) {
+      justify-content: space-around;
+    }
+    @include point(xs-ms) {
+      justify-content: flex-start;
+    }
+
+  }
+  &_pic {
+    width: 230px;
+    margin-bottom: 30px;
+    @include point(xs-ms) {
+      width: 130px;
+    }
+  }
+
+  &-content {
+    width: 52%;
+    height: auto;
+    padding: 36px 30px 20px;
+    display: flex;
+    flex-direction: column;
+    background: url("../../images/footer/footer-bg.jpg") no-repeat;
+    background-size: cover;
+    @include point(xs-lg) {
+      width: 100%;
+    }
+    @include point(xs-ms) {
+      justify-content: flex-start;
+    }
+    &_copy {
+      font-size: 16px;
+      line-height: 125%;
+      margin-top: auto;
+    }
+  }
+}

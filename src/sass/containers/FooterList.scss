@@ -1,0 +1,23 @@
+.footer-list {
+  list-style: none;
+  padding-left: 29px;
+  position: relative;
+  margin-bottom: 30px;
+  &_pic {
+    width: 24px;
+    height: 24px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &_item {
+    @include point(xs-hd) {
+      font-size: 18px;
+    }
+    & + & {
+      margin-top: 5px;
+    }
+  }
+}

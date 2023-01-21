@@ -1,0 +1,20 @@
+.privacy__title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 120%;
+    color: #2B2B2F;
+    margin-bottom: 20px;
+}
+.privacy__text {
+    font-size: 16px;
+    line-height: 150%;
+    color: #7E8085;
+    margin-bottom: 40px;
+}
+#privacy {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    z-index: -1;
+}

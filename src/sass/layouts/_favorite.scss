@@ -1,0 +1,27 @@
+.favorite-page-wrap {
+    background: #F3F3F3;
+    padding: 100px 0;
+    margin-bottom: -60px;
+    @include point(def-down){
+        padding: 30px 0;
+    }
+}
+.favorite-order-button-wrap {
+    @include point(def-down){
+        flex-direction: column;
+    }
+    .breadcrumbs-wrap {
+        @include point(def-down){
+            min-width: 100%;
+            max-width: 100%;
+        }
+    }
+}
+.favorite-order-button {
+    margin-bottom: 40px;
+    padding-left: 86px;
+    padding-right: 86px;
+    @include point(ms-down){
+        width: 100%;
+    }
+}

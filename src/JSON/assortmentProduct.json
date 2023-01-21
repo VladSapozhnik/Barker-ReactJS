@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "title": "Вареники з картоплею",
+    "price": "40 грн/кг",
+    "src": "1.jpg",
+    "categorySort": ["all", "boiledDough", "dough"]
+  },
+  {
+    "id": 2,
+    "title": "Пельмені з яловичиною",
+    "price": "40 грн/кг",
+    "src": "2.jpg",
+    "categorySort": ["all", "dumplings", "dough"]
+  },
+  {
+    "id": 3,
+    "title": "Пельмені зі свининою",
+    "price": "40 грн/кг",
+    "src": "3.jpg",
+    "categorySort": ["all", "dumplings", "dough"]
+  },
+  {
+    "id": 4,
+    "title": "Печиво",
+    "price": "40 грн/кг",
+    "src": "4.jpg",
+    "categorySort": ["all", "baking", "dough"]
+  },
+  {
+    "id": 5,
+    "title": "Круасан з малиновим джемом",
+    "price": "40 грн/кг",
+    "src": "5.jpg",
+    "categorySort": ["all", "baking", "dough"]
+  },
+  {
+    "id": 6,
+    "title": "Пончики",
+    "price": "40 грн/кг",
+    "src": "6.jpg",
+    "categorySort": ["all", "baking", "dough"]
+  },
+  {
+    "id": 7,
+    "title": "Пончики Херсон",
+    "price": "40 грн/кг",
+    "src": "6.jpg",
+    "categorySort": ["all", "baking", "dough"]
+  }
+]

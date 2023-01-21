@@ -1,0 +1,55 @@
+.about {
+  margin-bottom: 178px;
+  @include point(xs-hd) {
+    margin-bottom: 75px;
+  }
+
+  &-info {
+    left: 27px;
+    @include point(xs-ms) {
+      width: 100% !important;
+      position: static !important;
+      transform: translate(0) !important;
+    }
+  }
+
+  &-pictures {
+    width: max-content;
+    display: grid;
+    grid-template-areas:
+    "image1 image2"
+    "image1 image3";
+    grid-template-columns: minmax(auto, 760px) minmax(auto, 444px);
+    grid-template-rows: 316px 316px;
+    grid-gap: 30px;
+    @include point(lg-hd) {
+      grid-template-columns: minmax(auto, 500px) minmax(auto, 344px);
+      grid-template-rows: auto auto;
+      grid-gap: 15px;
+    }
+    @include point(ms-lg) {
+      grid-template-columns: minmax(auto, 610px) minmax(auto, 344px);
+      grid-template-rows: auto auto;
+      grid-gap: 10px;
+    }
+    @include point(xs-ms) {
+      display: none;
+    }
+    &_img {
+      display: block;
+      border-radius: 15px;
+      width: 100%;
+      height: 100%;
+      object-fit: none;
+      &--one {
+        grid-area: image1;
+      }
+      &--two {
+        grid-area: image2;
+      }
+      &--three {
+        grid-area: image3;
+      }
+    }
+  }
+}
