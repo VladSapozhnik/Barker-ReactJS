@@ -9,9 +9,9 @@
     @include point(xs-lg) {
       padding: 20px 0;
     }
-    @include point(ms-hd) {
-      justify-content: space-around;
-    }
+    //@include point(ms-hd) {
+    //  justify-content: space-around;
+    //}
     @include point(xs-ms) {
       justify-content: flex-start;
     }

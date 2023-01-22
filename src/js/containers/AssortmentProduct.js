@@ -1,4 +1,5 @@
 const AssortmentProduct = ({title, price, src, btn}) => {
+
     return (
         <div className="assortment-product _f _f-column _i-center">
             <img className="assortment-product_pic _img" src={require("../../images/assortment/" + src)} alt={title}/>

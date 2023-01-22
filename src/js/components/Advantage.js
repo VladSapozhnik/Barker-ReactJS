@@ -1,26 +1,17 @@
+import {useDispatch, useSelector} from "react-redux";
+import {useEffect} from "react";
+
 import AdvantageItem from "../containers/AdvantageItem";
+import {advantage, fetchAdvantage} from "../store/advantage";
 
 const Advantage = () => {
-    const advantageArray = [
-        {
-            id: 1,
-            title: "Професіонали",
-            description: "Ми за якісні кадри и поважаемо працю наших працівників. Вони стараються над вашою випічкою. А ми стараємся спростити їм цю задачу.",
-            src: "1.jpg"
-        },
-        {
-            id: 2,
-            title: "Якість",
-            description: "Це найважливіше в нашій роботі. Тільки з якісних продуктів можуть вийти такі шедеври, якими ми полюбляємо частувати вас.",
-            src: "2.jpg"
-        },
-        {
-            id: 3,
-            title: "Навчання",
-            description: "Наші робітники постійно навчаються і розвиваються. Що дозволяє нам дивувати вас новинках кожен місяць.",
-            src: "3.jpg"
-        }
-    ]
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchAdvantage());
+    }, [dispatch])
+
+    const advantageArray = useSelector(advantage);
 
     return (
         <>

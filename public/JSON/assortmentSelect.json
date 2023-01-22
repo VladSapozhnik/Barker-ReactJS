@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "category": "Весь асортимент",
+    "categorySort": "all"
+  },
+  {
+    "id": 2,
+    "category": "Випічка",
+    "categorySort": "baking"
+  },
+  {
+    "id": 3,
+    "category": "Пельмені",
+    "categorySort": "dumplings"
+  },
+  {
+    "id": 4,
+    "category": "Вареники",
+    "categorySort": "boiledDough"
+  },
+  {
+    "id": 5,
+    "category": "Тісто",
+    "categorySort": "dough"
+  }
+]

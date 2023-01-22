@@ -42,25 +42,6 @@ const Footer = () => {
         ]
     }
 
-    const menuArray = [
-        {
-            id: 1,
-            title: "Про компанію"
-        },
-        {
-            id: 2,
-            title: "Чому ми?"
-        },
-        {
-            id: 3,
-            title: "Доставка"
-        },
-        {
-            id: 4,
-            title: "Робота в компанії"
-        }
-    ]
-
     return (
         <>
             <div className="footer _f">
@@ -68,7 +49,7 @@ const Footer = () => {
                 <div className="footer-content">
                     <Logo className="footer_pic" />
                     <div className="footer-wrapper _f _f-wrap">
-                        <FooterMenu menuArray={menuArray} />
+                        <FooterMenu />
                         <div className="_f-column">
                             <FooterList img={location.icon} listArray={location.infoArray} />
                             <FooterList img={workingDays.icon} listArray={workingDays.infoArray} />
